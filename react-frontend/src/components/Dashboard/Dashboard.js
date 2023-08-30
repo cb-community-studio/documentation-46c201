@@ -6,6 +6,7 @@ import welcomeImg from "../../assets/media/welcome-banner.png";
 const Dashboard = (props) => {
     const history = useHistory();
     useEffect(() => {}, []);
+    
 
     return (
         <div className="col-12 flex flex-column align-items-center">

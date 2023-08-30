@@ -43,6 +43,10 @@ const AppTopbar = (props) => {
             console.log("error", error);
         }
     };
+
+    const handleNavigation = () => {
+        history.push('/documentation'); // Replace with the actual route path
+      };
     return (
         <div className="layout-topbar">
             <Link to="/">
@@ -53,7 +57,9 @@ const AppTopbar = (props) => {
                     </h3>
                 </div>
             </Link>
-
+            <div className=" flex align-items-end">
+                <Button label="Documentation" onClick={handleNavigation} className="p-button-secondary p-button-text" />
+            </div>
             {props.showSideMenuButton ? (
                 <button type="button" className="p-link  layout-menu-button layout-topbar-button" onClick={props.onToggleMenuClick}>
                     <i className="pi pi-bars" />

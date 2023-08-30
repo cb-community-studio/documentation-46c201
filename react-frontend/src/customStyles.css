@@ -7,10 +7,12 @@
     font-family: "Praktika";
     src: local("Praktika"), url(./assets/fonts/Praktika-Light.otf) format("opentype");
 }
+
 @font-face {
     font-family: "MarlinGeo";
     src: local("MarlinGeo"), url(./assets/fonts/MarlinGeo-Regular.otf) format("opentype");
 }
+
 @font-face {
     font-family: "MarlinGeo-Bold";
     src: local("MarlinGeo-Bold"), url(./assets/fonts/MarlinGeo-Bold.otf) format("opentype");
@@ -19,6 +21,7 @@
 .hover:hover {
     cursor: pointer;
 }
+
 .zoom:hover {
     transform: scale(102%);
 }
@@ -61,4 +64,37 @@
 
 .bord {
     border: 1px solid rgb(255, 5, 255);
+}
+
+/* Relate to Documentation Page */
+
+.custom-font-size {
+    font-size: 17px;
+    /* Adjust the font size value as needed */
+    text-align: justify;
+    /* Add text justification */
+}
+
+.custom-font-bold {
+    font-size: 18px;
+    /* Adjust the font size value as needed */
+    text-align: justify;
+    /* Add text justification */
+    font-weight: bold;
+    /* Add font boldness */
+}
+
+.highlight-red {
+    color: red;
+    /* You can add more styling if needed */
+}
+
+.card-gap {
+    width: 10px;
+    /* Adjust the desired gap size */
+}
+
+.Card {
+    margin-bottom: 20px;
+    /* Adjust the desired vertical gap size */
 }
