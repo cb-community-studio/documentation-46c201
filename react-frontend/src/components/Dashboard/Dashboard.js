@@ -16,6 +16,7 @@ const Dashboard = (props) => {
                     <div className="w-full flex justify-content-center flex-wrap ">
                         <></>
                 <div className='col-12 lg:col-6 xl:col-4'><Link to='/users'><div className='card mb-0 flex flex-column align-items-center justify-content-center hover zoom' style={{ height: '10rem' }}><div className='text-900 font-medium text-lg'>Users</div></div></Link></div>
+                <div className='col-12 lg:col-6 xl:col-4'><Link to='/datahandleguide'><div className='card mb-0 flex flex-column align-items-center justify-content-center hover zoom' style={{ height: '10rem' }}><div className='text-900 font-medium text-lg'>DataHandle</div></div></Link></div>
                         {/* ~cb-add-services-card~ */}
                     </div>
                 </div>

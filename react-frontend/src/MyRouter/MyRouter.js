@@ -33,6 +33,7 @@ import StartupWrapper from "./wrappers/StartupWrapper";
 import LoadingWrapper from "./wrappers/LoadingWrapper";
 import UsersPage from "../components/UsersPage/UsersPage";
 import DocumentPage from "../components/Documentation/DocumentPage";
+import DataHandlingGuidePage from "../components/Documentation/DataHandlingGuidePage";
 // ~cb-add-import~
 
 const MyRouter = () => {
@@ -182,6 +183,8 @@ const MyRouter = () => {
                     <Route path="/account" component={Account} />
                     <Route path="/users" component={UsersPage} />
                     <Route path="/documentation" component={DocumentPage}/>
+                    <Route path="/datahandleguide" component={DataHandlingGuidePage}/>
+                    
                     {/* ~cb-add-route~ */}
 
                     <Route path="*" component={NoMatch} />
