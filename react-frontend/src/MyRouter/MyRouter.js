@@ -34,6 +34,8 @@ import LoadingWrapper from "./wrappers/LoadingWrapper";
 import UsersPage from "../components/UsersPage/UsersPage";
 import DocumentPage from "../components/Documentation/DocumentPage";
 import DataHandlingGuidePage from "../components/Documentation/DataHandlingGuidePage";
+import AwsPage from "../components/AwsPage/AwsPage";
+import FirebaseHostingPage from "../components/FirebaseHostingPage/FirebaseHostingPage";
 // ~cb-add-import~
 
 const MyRouter = () => {
@@ -184,6 +186,9 @@ const MyRouter = () => {
                     <Route path="/users" component={UsersPage} />
                     <Route path="/documentation" component={DocumentPage}/>
                     <Route path="/datahandleguide" component={DataHandlingGuidePage}/>
+                    <Route path="/awspage" component={AwsPage}/>
+                    <Route path="/firebasepage" component={FirebaseHostingPage}/>
+                    
                     
                     {/* ~cb-add-route~ */}
 
