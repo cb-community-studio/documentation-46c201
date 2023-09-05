@@ -107,6 +107,29 @@ const UniqueConcept = () => {
     );
 };
 
+// List of items in Advance Setting// 
+const AdvanceSettingsItem = () => {
+    const AdvanceSettingsdata = [
+        { type: 'Display', description: 'Display function will allow the user to view the fieldname in the fronthend ,with the option of manipulate the font stylized.' },
+        { type: 'Sortable', description: 'Sortable generally refers to the ability to rearrange items in a specific order or sequence' },
+        { type: 'Editable', description: 'In frontend development, the term "required" usually refers to indicating that a certain input or field must be filled out by the user before proceeding.' },
+        { type: 'Required', description: 'When building user interfaces, having unique components ensures that different parts of the interface are easily distinguishable and can be styled or interacted with separately.' },
+        { type: 'Lowercase', description: 'Lowercase refers to the standard form of letters in the English alphabet that are in their smaller, non-capitalized form. Its used to represent text or data where all the letters are in their lowercase representation.' },
+        { type: 'Duplicate Field', description: 'The duplicate option allows the user to replicate the entire selected field into another version with a different file name.' },
+        { type: 'Delete Field', description: 'Delete will allow us to remove the selected field from the service.' },
+        // ... other data objects
+    ];
+
+    return (
+        <div>
+            <DataTable value={AdvanceSettingsdata} stripedRows >
+                <Column field="type" header="List of Settings Available" />
+                <Column field="description" header="Description" />
+            </DataTable>
+        </div>
+    );
+};
+
 
 
 const DataHandlingGuidePage = () => {
@@ -114,164 +137,82 @@ const DataHandlingGuidePage = () => {
     useEffect(() => { }, []);
 
     return (
-        <div className="card">
+        <div className="col-12">
             <Accordion multiple activeIndex={[0]}>
                 <AccordionTab header="Description about service details">
-                    <Card title="Service Name">
-                        <p className="m-0">
-                            serviceName is defined as the name of the service created. This service name will be used as a reference in the backend in order to create the .class, .hooks, and .service files.
-                            For example, product is the created service name; therefore, in the backend, the product service will have those 3 files in a folder.
-                        </p>
-                    </Card>
-                    <Card title="Duplicate">
-                        <p className="m-0">
-                            The duplicate option allows the user to replicate the existing service into another version with a different file name.
-                        </p>
-                    </Card>
-                    <Card title="Delete">
-                        <p className="m-0">
-                            Delete will allow us to remove the selected service from the system.
-                        </p>
-                    </Card>
+                    <div className="card w-12">
+                        <h4>Service Name</h4>
+                        <p className="custom-font-size">Service Name is defined as the name of the service created. This service name will be used as a reference in the backend in order to create the .class, .hooks, and .service files.
+                            For example, product is the created service name; therefore, in the backend, the product service will have those 3 files in a folder.</p>
+                        <h4>Duplicate</h4>
+                        <p className="custom-font-size">The duplicate option allows the user to replicate the existing service into another version with a different file name.</p>
+                        <h4>Delete</h4>
+                        <p className="custom-font-size">Delete will allow us to remove the selected service from the system.</p>
+                    </div>
                 </AccordionTab>
                 <AccordionTab header="Description about field details">
-                    <p className="m-0">
-                        As we know, there are backend and frontend components needed to develop an application. First of all,
-                        there are important terms that we need to know and understand about how they work. Let’s get started.
-                    </p>
-                    <Card title="Field Name">
-                        <p className="m-0">
-                            The term "fieldname" in backend development often refers to the name assigned to a single data field or attribute in a data structure or database.
+                    <div className="card w-12">
+                        <h4>Field Name</h4>
+                        <p className="custom-font-size">The term "fieldname" in backend development often refers to the name assigned to a single data field or attribute in a data structure or database.
                             It is used to identify and access a specific piece of data within a larger structure in a unique way.
                             For example, if you're dealing with a database table that maintains user information, each user's record may include fields such as "username," "email," and "age". In this scenario,
-                            the field names "username," "email," and "age" match specific properties of the user data.
-                        </p>
-                    </Card>
-                    <Card title="Label">
-                        <p className="m-0">
-                            A label refers to a piece of text or visual element that is associated with a form input element. The label provides context or information about what kind of input is
-                            expected in the corresponding input field. Labels play an essential role in creating user-friendly and accessible forms.
-                        </p>
-                    </Card>
-                    <Card title="String Type">
-                        <p className="m-0">
-                            A string is a fundamental data type that represents a sequence of characters. It's used to store and manipulate textual information,
-                            like words and sentences, in various software applications.
-                        </p>
-                        <Card title="Component">
-                            <p className="m-0">
-                                A component is a modular, reusable, and self-contained unit in software development. It encapsulates specific functionality, data, and user interface elements, promoting modularity and
-                                easier maintenance in larger systems. Components are building blocks that can be combined to create complex applications.
-                            </p>
+                            the field names "username," "email," and "age" match specific properties of the user data.</p>
+                        <h4>Label</h4>
+                        <p className="custom-font-size">A label refers to a piece of text or visual element that is associated with a form input element. The label provides context or information about what kind of input is
+                            expected in the corresponding input field. Labels play an essential role in creating user-friendly and accessible forms.</p>
+                        <Card>
+                            <h4>String Type</h4>
+                            <p className="custom-font-size">A string is a fundamental data type that represents a sequence of characters. It's used to store and manipulate textual information,
+                                like words and sentences, in various software applications.</p>
+                            <h4>Component</h4>
+                            <p className="custom-font-size">A component is a modular, reusable, and self-contained unit in software development. It encapsulates specific functionality, data, and user interface elements, promoting modularity and
+                                easier maintenance in larger systems. Components are building blocks that can be combined to create complex applications.</p>
                             <ComponentString />
                         </Card>
-                    </Card>
-                    <Card title="Boolean Type">
-                        <p className="m-0">
-                            Boolean is a data type representing true or false values, used for logical decisions and conditions.
-                        </p>
-                        <Card>
-                            <ComponentBoolean />
-                        </Card>
-                    </Card>
-                    <Card title="Number Type">
-                        <p className="m-0">
-                            Number generally refers to a data type used to represent numeric values. Numbers can include both integers (whole numbers) and floating-point numbers (decimal numbers).
-                        </p>
-                        <Card>
-                            <ComponentNumber />
-                        </Card>
-                    </Card>
-                    <Card title="Date Type">
-                        <p className="m-0">
-                            "Date" refers to a data type that represents a specific point in time, including the day, month, year, and often the time as well. Dates are commonly used for displaying, manipulating, and working with chronological information in user interfaces.
-                        </p>
-                        <Card>
-                            <ComponentDate />
-                        </Card>
-                    </Card>
-                    <Card title="Array Type">
-                        <p className="m-0">
-                            An array is a data structure that holds a series of elements indexed from zero. It's like a list of items, such as numbers or strings.<br></br> For example, `const fruits = ['apple', 'banana', 'orange'];` represents an array named `fruits` containing three strings.\
-                        </p>
-                    </Card>
-                    <Card title="ObjectId Type">
-                        <p className="m-0">
-                            Not available
-                        </p>
-                    </Card>
-                    <Card title="Default">
-                        <p className="m-0">
-                            Default is used to set the standrd item or value that will be used or begin as the system clears off.
-                        </p>
-                    </Card>
+                    </div>
+                    <div className="card w-12">
+                        <h4>Boolean Type</h4>
+                        <p className="custom-font-size">Boolean is a data type representing true or false values, used for logical decisions and conditions.</p>
+                        <ComponentBoolean />
+                    </div>
+                    <div className="card w-12">
+                        <h4>Number Type</h4>
+                        <p className="custom-font-size">Number generally refers to a data type used to represent numeric values. Numbers can include both integers (whole numbers) and floating-point numbers (decimal numbers).</p>
+                        <ComponentNumber />
+                    </div>
+                    <div className="card w-12">
+                        <h4>Date Type</h4>
+                        <p className="custom-font-size">"Date" refers to a data type that represents a specific point in time, including the day, month, year, and often the time as well. Dates are commonly used for displaying, manipulating, and working with chronological information in user interfaces.</p>
+                        <ComponentDate />
+                    </div>
+                    <div className="card w-12">
+                        <h4>Array Type</h4>
+                        <p className="custom-font-size">An array is a data structure that holds a series of elements indexed from zero. It's like a list of items, such as numbers or strings.<br></br> For example, `const fruits = ['apple', 'banana', 'orange'];` represents an array named `fruits` containing three strings.</p>
+                        <hr></hr>
+                        <h4>ObjectId Type</h4>
+                        <p className="custom-font-size">Not available.</p>
+                        <hr></hr>
+                        <h4>Default</h4>
+                        <p className="custom-font-size">Default is used to set the standard item or value that will be used or begin as the system clears off.</p>
+
+                    </div>
                 </AccordionTab>
                 <AccordionTab header="Advance Setings">
-                    <Card title="Display">
-                        <p className="m-0">
-                            Delete will allow us to remove the selected service from the system.
-                        </p>
-                    </Card>
-                    <Card title="Sortable">
-                        <p className="m-0">
-                            "Sortable" generally refers to the ability to rearrange items in a specific order or sequence, often by dragging and dropping them.
-                            In a front-end context, a "sortable" feature is typically implemented using JavaScript libraries or frameworks to allow users to interactively reorder items in a list or grid.
-                            <br></br>
-                            A sortable UI component is commonly used for tasks like reordering to-do list items, organizing photos in an album, or prioritizing tasks.
-                            It provides a user-friendly way to change the sequence of elements without relying on complex manual operations.
-                        </p>
-                    </Card>
-                    <Card title="Editable">
-                        <p className="m-0">
-                            "Editable" refers to the ability to modify or change content directly within a user interface. In a frontend context, an "editable" element
-                            allows users to interact with and modify text, data, or other content within a web page or application without requiring a separate editing interface.
-                            <br></br>
-                            For example, an editable text field enables users to click or select the text and make changes right there, similar to how you can edit text in a
-                            word processor. An editable data table might allow users to modify values directly within the table cells without navigating to a separate form.
-                            <br></br>
-                            Editable elements enhance the user experience and efficiency, as they eliminate the need to switch between viewing and editing modes.
-                            However, it's important to ensure that editable elements are clear and user-friendly and that changes are properly validated and saved if necessary.
-                        </p>
-                    </Card>
-                    <Card title="Required">
-                        <p className="m-0">
-                            "In frontend development, the term 'required' usually refers to indicating that a certain input or field must be filled out by the user before proceeding.
-                            It's a validation mechanism to ensure that essential information is provided in forms or user interfaces.
-                            <br></br>
-                            For example, a 'required' attribute can be added to an HTML {"<input>"} element to specify that the associated field must be completed before submitting a form.
-                            In user interfaces, a visual indicator like an asterisk (*) might be used to denote required fields.
-                        </p>
-                    </Card>
-                    <Card title="Unique">
-                        <p className="m-0">
+                    <div className="card w-12">
+                        <AdvanceSettingsItem /></div>
+                    <div className="card w-12">
+                        <h4>Unique</h4>
+                        <p className="custom-font-size">
                             In front-end development, "unique" typically refers to ensuring that something is distinct and not repeated or duplicated within a specific context.
                             The concept of "unique" helps maintain order, data accuracy, and user experience in front-end applications.
                             <hr></hr>
                             This concept is used to prevent data redundancy and maintain accuracy in various aspects of a front-end application:
                         </p>
                         <UniqueConcept />
-                    </Card>
-                    <Card title="Lowercase">
-                        <p className="m-0">
-                            Lowercase refers to the standard form of letters in the English alphabet that are in their smaller, non-capitalized form. It's used to represent text or data where all the letters are in their lowercase representation.
-                            <br></br>
-                            <br></br>
-                            For example, converting a string to lowercase involves changing all uppercase letters within the string to their corresponding lowercase counterparts. This is often used to ensure consistent formatting and comparisons in text processing.
-                        </p>
-                    </Card>
-                    <Card title="Duplicate Field">
-                        <p className="m-0">
-                            The duplicate option allows the user to replicate the entire selected field into another version with a different file name.
-                        </p>
-                    </Card>
-                    <Card title="Delete Field">
-                        <p className="m-0">
-                            Delete will allow us to remove the selected field from the service.
-                        </p>
-                    </Card>
-                </AccordionTab>
-            </Accordion>
-        </div>
+                </div>
+            </AccordionTab>
+        </Accordion>
+        </div >
 
     );
 };
