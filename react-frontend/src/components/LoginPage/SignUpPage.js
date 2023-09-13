@@ -4,7 +4,7 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { useHistory } from "react-router-dom";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth } from "./GoogleAuth";
 
 const SignUpPage = (props) => {
     const [name, setName] = useState("");
@@ -35,7 +35,7 @@ const SignUpPage = (props) => {
         }
     };
 
-    
+
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
