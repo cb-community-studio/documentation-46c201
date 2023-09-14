@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Link, useHistory } from "react-router-dom";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "./GoogleAuth";
 
 const LoginPage = (props) => {
     const [email, setEmail] = useState("");
@@ -21,6 +23,31 @@ const LoginPage = (props) => {
 
     const onEnter = (e) => {
         if (e.key === "Enter") login();
+    };
+
+
+    const googleSignIn = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((userCredential) => {
+                // Signed in with Google
+                const user = userCredential.user;
+                // const displayName = user.displayName;
+                // const email = user.email;
+
+                // // You can use the user information as needed, for example, display the user's name
+                // console.log(`Signed in as ${displayName}`);
+                // console.log(`Email: ${email}`);
+
+                // Redirect or perform other actions as needed
+                history.push("/");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // Handle Google sign-in error
+                console.error(errorCode, errorMessage);
+            });
     };
 
     const login = () => {
@@ -64,8 +91,11 @@ const LoginPage = (props) => {
                             </span>
                             <small className="p-error">{passwordError}</small>
                         </div>
-                        <div className="w-6 mb-4">
+                        <div className="w-7 mb-4">
                             <Button label="Login" className="p-button-raised p-button-rounded" onClick={login}></Button>
+                        </div>
+                        <div className="w-7 mb-1">
+                            <Button label="Login in with Google" className="p-button-raised p-button-rounded" onClick={googleSignIn}></Button>
                         </div>
                         <div className="w-full flex flex-column align-items-center">
                             <div className="w-full flex justify-content-between">

@@ -4,7 +4,6 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { useHistory } from "react-router-dom";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "./GoogleAuth";
 
 const SignUpPage = (props) => {
     const [name, setName] = useState("");
@@ -41,16 +40,16 @@ const SignUpPage = (props) => {
         signInWithPopup(auth, provider)
             .then((userCredential) => {
                 // Signed in with Google
-                const user = userCredential.user;
-                const displayName = user.displayName;
-                const email = user.email;
+                // const user = userCredential.user;
+                // const displayName = user.displayName;
+                // const email = user.email;
 
-                // You can use the user information as needed, for example, display the user's name
-                console.log(`Signed in as ${displayName}`);
-                console.log(`Email: ${email}`);
+                // // You can use the user information as needed, for example, display the user's name
+                // console.log(`Signed in as ${displayName}`);
+                // console.log(`Email: ${email}`);
 
                 // Redirect or perform other actions as needed
-                history.push("/user/studio");
+                history.push("/");
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -161,9 +160,9 @@ const SignUpPage = (props) => {
                         </div>
                     </div>
                     <div className="flex justify-content-center mt-3">
-                        <div className="col-6 lg:col-6">
+                        <div className="col-7 lg:col-6">
                             <Button label="Sign Up" className="p-button-raised p-button-rounded" onClick={signup}></Button>
-                            <Button label="Sign in with Google" className="p-button-raised p-button-rounded" onClick={googleSignIn}></Button>
+                            <Button label="Sign up with Google" className="p-button-raised p-button-rounded" onClick={googleSignIn}></Button>
                         </div>
                     </div>
                 </div>
