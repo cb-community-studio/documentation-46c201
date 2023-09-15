@@ -40,15 +40,15 @@ const SignUpPage = (props) => {
         signInWithPopup(auth, provider)
             .then((userCredential) => {
                 // Signed in with Google
-                // const user = userCredential.user;
-                // const displayName = user.displayName;
-                // const email = user.email;
+                const user = userCredential.user;
+                const displayName = user.displayName;
+                const email = user.email;
 
-                // // You can use the user information as needed, for example, display the user's name
-                // console.log(`Signed in as ${displayName}`);
-                // console.log(`Email: ${email}`);
+                // Use console to check the email and user name
+                console.log(`Signed in as ${displayName}`);
+                console.log(`Email: ${email}`);
 
-                // Redirect or perform other actions as needed
+                // Direct to the homepage
                 history.push("/");
             })
             .catch((error) => {
